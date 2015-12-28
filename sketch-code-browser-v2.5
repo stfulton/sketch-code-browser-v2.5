@@ -2,21 +2,21 @@
 
 import java.util.*;
 
-//these three must be changed for your machine's configuration (I use a Mac)
+//must be changed for your machine's config (I use a Mac)
 File sketchpath=new File("/Users/timfulton/Documents/Processing");
 File libraries=new File("/Users/timfulton/Documents/Processing/libraries");
 File examples=new File("/Applications/Processing.app");
 
-//mostly I'm interested in my own sketches; best to enable just one.
-//TODO: MAKE THIS SELECTION INTERACTIVE
+//best to enable just one.
+//TODO: MAKE THIS INTERACTIVE
 boolean includeSketchpath=false;
 boolean includeLibraries=false;
 boolean includeExamples=true;
 
-//change example term and run again for different search.
+//change & run again for different search.
 String sketchSearchTerm="HashMap";
 
-///////////// begin user-adjustable parameters
+///////////// begin user-adjustable params
 
 //change width and height here, NOT in size()!!
 final int WIDTH=1125, HEIGHT=800;//1100,900
@@ -99,11 +99,9 @@ public void setup()
    
    
    
-   //filefilter (Apache's FileUtils) gets all .pde-extended files in /libraries/*  
    if (includeLibraries){
      
        librariesSet=walk(libraries); 
-
        Enumeration e=Collections.enumeration(librariesSet);
        while (e.hasMoreElements()) FromLibraries.add(new Sketch((File)e.nextElement()));
       
@@ -255,17 +253,6 @@ Set <File> walk(File dir) {
   }
 return uDirs;
 }
-
-
-
-
-//this is the recursive walk function
-//should perhaps return the QRF equivalent?
-//or just declare QRF globally and reuse within the legacy functions
-//??????????
-
-//----------------------------------------walk(File dir)
-
 
 //returns ArrayList of the Sketches by last modification time.
 //---------------------------------------------------------------------------------- sortArrayList(Not)
@@ -538,7 +525,7 @@ public void checkMousePosition()
 
 //called by draw(), if locked (call it displayLockedListImage?)
 //displays ListImage at correct startPosition, checks l/r buttons,
-//checking, shows activeSketch name in red and calls its display method.
+//shows activeSketch name in red and calls its display method.
 //(call to checkMousePosition() must preceed, else no activeSketch!!)
 //--------------------------------------------------------------------------------displayListImage()
 public void displayListImage()
