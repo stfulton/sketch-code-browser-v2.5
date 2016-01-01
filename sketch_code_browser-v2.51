@@ -1,4 +1,5 @@
-
+//in github, click RAW, select all, and paste to a new processing sketch
+//save the file as sketch_code_browser-v2.51
 import java.util.*;
 
 //must be changed for your machine's config (I use a Mac)
